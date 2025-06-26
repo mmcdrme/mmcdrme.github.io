@@ -15,11 +15,30 @@
     <h1>Main Page</h1>
     <div>
         <a href="./lanzou.html">蓝奏云</a><br>
-        <a href="./download/lzy_0.0.15.drapk" download="lzy_0.0.15.apk">下载蓝奏云</a><br>
-        <a href="./data/sur_1.0.0.1.drzip" download="sur_1.0.0.1.zip">下载python:sur模块</a><br>
-        <a href="https://jinshuju.net/f/kg2uli">反馈</a><br>
+        <a href="./download/lzy_0.0.15.tmpapk" download="lzy_0.0.15.apk">下载蓝奏云</a><br>
+        <a href="./data/sur_1.0.0.1.tmpzip" download="sur_1.0.0.1.zip">下载python:sur模块</a><br>
+        <br><a href="https://jinshuju.net/f/kg2uli">反馈</a><br>
         <a href="./agreement.html">下载协议</a>
     </div>
+    <script>
+        // fetch("https://wp.shanhutech.cn/intf/GetListByCategory?pageno=20&count=1&cids=26")
+        //     .then(response => response.text())
+        //     .then(text => {
+        //         let bgresponse = JSON.parse(text)
+        //         bgurl = bgresponse.data.list[0].url
+        //         document.body.setAttribute('style', `background-image: url("${bgurl}")`)
+        //     })
+        //     .catch(error => console.error('NetWork ERROR: ', error));
+
+        fetch("https://wp.shanhutech.cn/intf/GetUpOrDownWallpaper?type=search&action=&value=%E5%8E%9F%E7%A5%9E&id=2051093")
+            .then(response => response.text())
+            .then(text => {
+                let bgresponse = JSON.parse(text)
+                bgurl = bgresponse.data.detail.url
+                document.body.setAttribute('style', `background-image: url("${bgurl}")`)
+            })
+            .catch(error => console.error('NetWork ERROR: ', error));
+    </script>
 </body>
 
 </html>

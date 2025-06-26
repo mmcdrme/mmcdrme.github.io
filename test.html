@@ -17,6 +17,16 @@
         <h5>若网络仍然无法正常访问,请删除浏览器缓存后刷新该网页.</h5>
         <br><a href="./index.html">回到主页</a><br><br><br>
     </div>
+    <script>
+        fetch("https://wp.shanhutech.cn/intf/GetUpOrDownWallpaper?type=search&action=&value=%E5%8E%9F%E7%A5%9E&id=2051093")
+            .then(response => response.text())
+            .then(text => {
+                let bgresponse = JSON.parse(text)
+                bgurl = bgresponse.data.detail.url
+                document.body.setAttribute('style', `background-image: url("${bgurl}")`)
+            })
+            .catch(error => console.error('NetWork ERROR: ', error));
+    </script>
 </body>
 
 </html>

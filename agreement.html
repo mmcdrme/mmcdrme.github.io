@@ -24,32 +24,14 @@
         <a href="./index.html">回到主页</a>
     </div>
     <script>
-        // function readtxt(s)
-        // {
-        //     var xhr = new XMLHttpRequest();
-        //     xhr.open("GET", s, true);
-        //     xhr.responseType = "text";
-        //     xhr.onload = function() {
-        //         if (xhr.status === 200) {
-        //             var content = xhr.responseText;
-        //             return content;
-        //         }
-        //     };
-        //     xhr.send();
-        // }
-
-        // function readtxt2(s){
-        //     fetch(s)
-        //         .then(response => response.text())
-        //         .then(text => {
-        //             document.getElementById('content').textcontent = text;
-        //             return text;
-        //         })
-        //         .catch(error => console.error('Error reading the file', error));
-        // }
-        // let agmtxt = readtxt2("./download/agreement.tmptxt");
-        // agmh = document.getElementById("agmh");
-        // agmh.textcontent = agmtxt;
+        fetch("https://wp.shanhutech.cn/intf/GetUpOrDownWallpaper?type=search&action=&value=%E5%8E%9F%E7%A5%9E&id=2051093")
+            .then(response => response.text())
+            .then(text => {
+                let bgresponse = JSON.parse(text)
+                bgurl = bgresponse.data.detail.url
+                document.body.setAttribute('style', `background-image: url("${bgurl}")`)
+            })
+            .catch(error => console.error('NetWork ERROR: ', error));
     </script>
 </body>
 

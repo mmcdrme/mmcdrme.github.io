@@ -17,6 +17,16 @@
         <img class="rotate" src="./img/loading-oppo.png">
         <br><br><a href="./index.html">回到主页</a>
     </div>
+    <script>
+        fetch("https://wp.shanhutech.cn/intf/GetUpOrDownWallpaper?type=search&action=&value=%E5%8E%9F%E7%A5%9E&id=2051093")
+            .then(response => response.text())
+            .then(text => {
+                let bgresponse = JSON.parse(text)
+                bgurl = bgresponse.data.detail.url
+                document.body.setAttribute('style', `background-image: url("${bgurl}")`)
+            })
+            .catch(error => console.error('NetWork ERROR: ', error));
+    </script>
 </body>
 
 </html>
