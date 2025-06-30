@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta http-equiv="Refresh" content="3;URL=http://47.122.134.244">
+    <meta charset="utf-8">
+    <meta lang="zh">
+    <title>准备重定向</title>
+    <link rel="stylesheet" type="text/css" href="./css/404.css">
+</head>
+
+<body>
+    <div>
+        <h1 class="notfound404">准备重定向</h1>
+        <h2>5秒后自动跳转</h2>
+        <img class="rotate" src="./img/loading-oppo.png">
+        <br><br><a href="./index.html">回到主页</a>
+    </div>
+    <script>
+        fetch("https://wp.shanhutech.cn/intf/GetUpOrDownWallpaper?type=search&action=&value=%E5%8E%9F%E7%A5%9E&id=2051093")
+            .then(response => response.text())
+            .then(text => {
+                let bgresponse = JSON.parse(text)
+                bgurl = bgresponse.data.detail.url
+                document.body.setAttribute('style', `background-image: url("${bgurl}")`)
+            })
+            .catch(error => console.error('NetWork ERROR: ', error));
+    </script>
+</body>
+
+</html>
